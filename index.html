@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frau Fuhrmanns Lernwelt – Klasse 3</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #eef7ff, #f8f5ff);
+    color: #24324a;
+  }
+  header {
+    text-align: center;
+    padding: 42px 20px 30px;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  }
+  h1 {
+    margin: 0 0 10px;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    color: #304a70;
+  }
+  .subtitle {
+    font-size: 1.15rem;
+    color: #64748b;
+  }
+  main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px 50px;
+  }
+  .intro {
+    text-align: center;
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+  .subject {
+    min-height: 190px;
+    border: 0;
+    border-radius: 24px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    background: white;
+    box-shadow: 0 5px 18px rgba(0,0,0,.10);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .subject:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  }
+  .icon { font-size: 3.4rem; }
+  .subject h2 { margin: 12px 0 5px; font-size: 1.5rem; }
+  .subject p { margin: 0; color: #718096; }
+  .links {
+    display: none;
+    margin-top: 20px;
+    text-align: left;
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 15px;
+  }
+  .links.open { display: block; }
+  .links a {
+    display: block;
+    padding: 12px 14px;
+    margin: 7px 0;
+    background: white;
+    border-radius: 10px;
+    color: #315b91;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06);
+  }
+  .links a:hover { background: #edf5ff; }
+  footer {
+    text-align: center;
+    padding: 25px;
+    color: #7b8798;
+    font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🌈 Frau Fuhrmanns Lernwelt</h1>
+  <div class="subtitle">Klasse 3 · Lernen, Üben und Entdecken</div>
+</header>
+
+<main>
+  <p class="intro">
+    Hallo! 👋<br>
+    Wähle ein Fach aus und entdecke deine Übungen.
+  </p>
+
+  <div class="grid">
+
+    <section class="subject">
+      <div class="icon">🌳</div>
+      <h2>Sachunterricht</h2>
+      <p>Entdecken & Forschen</p>
+      <div class="links">
+        <!-- Neue HTML-Seiten für Sachunterricht hier eintragen -->
+        <a href="Sachunterricht/beispiel.html">Beispiel – hier später löschen</a>
+      </div>
+    </section>
+
+    <section class="subject">
+      <div class="icon">🧮</div>
+      <h2>Mathe</h2>
+      <p>Rechnen & Knobeln</p>
+      <div class="links">
+        <!-- Neue HTML-Seiten für Mathe hier eintragen -->
+        <a href="Mathe/beispiel.html">Beispiel – hier später löschen</a>
+      </div>
+    </section>
+
+    <section class="subject">
+      <div class="icon">🎵</div>
+      <h2>Musik</h2>
+      <p>Hören, Singen & Bewegen</p>
+      <div class="links">
+        <!-- Neue HTML-Seiten für Musik hier eintragen -->
+        <a href="Musik/beispiel.html">Beispiel – hier später löschen</a>
+      </div>
+    </section>
+
+    <section class="subject">
+      <div class="icon">🇬🇧</div>
+      <h2>Englisch</h2>
+      <p>Words, games & fun</p>
+      <div class="links">
+        <!-- Neue HTML-Seiten für Englisch hier eintragen -->
+        <a href="Englisch/beispiel.html">Beispiel – hier später löschen</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  Frau Fuhrmanns Lernwelt · Klasse 3
+</footer>
+
+<script>
+document.querySelectorAll('.subject').forEach(card => {
+  card.addEventListener('click', (event) => {
+    if (event.target.tagName === 'A') return;
+    const links = card.querySelector('.links');
+    document.querySelectorAll('.links').forEach(x => {
+      if (x !== links) x.classList.remove('open');
+    });
+    links.classList.toggle('open');
+  });
+});
+</script>
+
+</body>
+</html>
